@@ -1,0 +1,26 @@
+<div class="row">
+<div class="col-lg-4 ">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div calss="card-body">
+      <%= image_tag @book.image, style: "width:250px; height:350px" %>
+      </div>
+  </div>
+</div>
+<div class="col-lg-6 ">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div calss="card-body">
+      <%= render @book %>
+      </div>
+  </div>
+</div>
+<div>
+  <%= link_to "Back to books", books_path %>  
+
+    <% if user_signed_in? %>
+    <% if @book.user_id == current_user.id %>
+      <%= link_to "Edit this book", edit_book_path(@book) %> 
+      <%= button_to "Destroy this book", @book, method: :delete %>
+    <% end %>
+    
+  <% end %>
+</div>

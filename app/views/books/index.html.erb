@@ -1,0 +1,16 @@
+<h1>Books</h1>
+<br>
+<div class="col-lg-6 ">
+  <div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div calss="card-body">
+      <div id="books">
+        <% @books.each do |book| %>
+          <ul>
+            <%= image_tag book.image, style: "width:250px; height:350px", class: "book" %><br>
+            <li><%= link_to book.title, book %></li>
+          </ul>
+        <% end %>
+      </div>
+      </div>
+  </div>
+</div>
