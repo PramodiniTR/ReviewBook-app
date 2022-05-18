@@ -1,0 +1,15 @@
+<div class="col-lg-4 ">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <div calss="card-body">
+            <%= simple_form_for([@book, @book.reviews.build]) do |f| %>
+                <div id="rating-form">
+                    <%= f.input :rating %>
+                </div>
+                <%= f.input :comment %>
+                <%= f.button :submit %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+

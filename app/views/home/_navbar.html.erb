@@ -7,12 +7,13 @@
         <span class="navbar-toggler-icon"></span>
     </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav">  
                 <% if user_signed_in? %>
                     <li><%= link_to 'Sign Out', destroy_user_session_path, class: "navbar-brand", data: { turbo_method: :delete} %></li> 
                     <li><%= link_to 'Add Book', new_book_path, class: "navbar-brand" %></li>
                 <% else %>
-                <li><%= link_to 'Sign In', new_user_session_path, class: "navbar-brand" %>
+                    <%= link_to 'Sign In', new_user_session_path, class: "navbar-brand" %>
+                    <%= link_to "Sign Up", new_user_registration_path, class:"navbar-brand" %>
                 <% end %>
             </ul>
         </div> 
