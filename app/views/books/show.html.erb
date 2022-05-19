@@ -3,9 +3,6 @@
       <div calss="card-body">
       <%= image_tag @book.image, style: "width:250px; height:350px" %>
       <%= render @book.reviews %><br>
-        <% if user_signed_in? %>
-            <%= link_to "Add Review", new_book_review_path(@book) %>
-        <% end %>
       </div>
   </div>
 </div>

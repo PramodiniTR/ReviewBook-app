@@ -1,25 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
     <a class="navbar-brand" href="#">BOOK REVIEW</a>
     <div class:"container">
-    <%= link_to "HOME", books_path, class: "navbar-brand" %>
+        <%= link_to "HOME", books_path, class: "navbar-brand" %>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">  
-                <% if user_signed_in? %>
-                    <li><%= link_to 'Sign Out', destroy_user_session_path, class: "navbar-brand", data: { turbo_method: :delete} %></li> 
-                    <li><%= link_to 'Add Book', new_book_path, class: "navbar-brand" %></li>
-                <% else %>
-                    <%= link_to 'Sign In', new_user_session_path, class: "navbar-brand" %>
-                    <%= link_to "Sign Up", new_user_registration_path, class:"navbar-brand" %>
-                <% end %>
-            </ul>
-        </div> 
-        <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">  
+            <% if user_signed_in? %>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, class: "navbar-brand", data: { turbo_method: :delete} %></li> 
+                <li><%= link_to 'Add Book', new_book_path, class: "navbar-brand" %></li>
+            <% else %>
+                <%= link_to 'Sign In', new_user_session_path, class: "navbar-brand" %>
+                <%= link_to "Sign Up", new_user_registration_path, class:"navbar-brand" %>
+            <% end %>
+        </ul>
     </div>
 </nav>
